@@ -1,0 +1,25 @@
+<project name="spiralcraft-distrib-sandbox" default="zip" basedir=".">
+
+  <property name="module" value="distrib-sandbox"/>
+  <property name="buildVersion" value="0.4.17-dev1"/>
+
+  <property name="zip.name" value="spiralcraft-sandbox-${buildVersion}.zip"/>
+  <property name="publish.resolver.type" value="distrib"/>   
+  <property name="ivy-publish-artifacts-dir" value="zip"/>
+  <property name="ivy-retreive-lib" value="false"/>
+  <property name="ivy-retreive-zip" value="true"/>
+    
+  <import file="../../build/build-spiralcraft-common.xml"/>
+  
+  <zipfileset id="zip.exec.out" dir="." filemode="755">
+    <include name="bin/update.cmd"/>
+    <include name="bin/wget.exe"/>
+    <include name="bin/unzip.exe"/>
+  </zipfileset>      
+
+  <zipfileset id="zip.out" dir=".">
+    <include name="download"/>
+  </zipfileset>
+
+  
+</project>

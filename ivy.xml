@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+  <info organisation="spiralcraft" module="distrib-sandbox">
+  </info> 
+  
+
+
+  <publications>
+    <artifact name="spiralcraft-sandbox" type="zip" ext="zip"/>
+  </publications> 
+  
+  <dependencies>
+    <dependency org="spiralcraft" name="build" rev="[0.4.17-dev,0.4.18-dev["/>
+    <conflict manager="latest-compatible"/>
+  </dependencies>
+
+</ivy-module>
