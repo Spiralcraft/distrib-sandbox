@@ -15,6 +15,7 @@
     <include name="bin/update.cmd"/>
     <include name="bin/wget.exe"/>
     <include name="bin/unzip.exe"/>
+    <include name="bin/update.sh"/>
   </zipfileset>      
 
   <zipfileset id="zip.out" dir=".">
