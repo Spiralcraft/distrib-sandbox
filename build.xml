@@ -18,7 +18,7 @@
   </zipfileset>      
 
   <zipfileset id="zip.out" dir=".">
-    <include name="download"/>
+      <include name="download"/>
   </zipfileset>
 
   
