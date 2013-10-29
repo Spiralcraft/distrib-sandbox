@@ -11,7 +11,9 @@
     
   <import file="../../build/build-spiralcraft-common.xml"/>
   
-  <target name="resolve" depends="build-ivy.resolve">
+  <target name="zip" depends="pre-zip,build-app.zip"/>
+    
+  <target name="pre-zip" depends="retrieve">
     <delete dir="build"/>
     <unzip src="zip/spiralcraft-build.zip" dest="build"/>
   </target>
