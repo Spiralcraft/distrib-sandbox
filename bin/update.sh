@@ -1,6 +1,14 @@
 #!/bin/sh
 cd $(dirname $0)
 VERSION=0.4.17-dev1
+ARTIFACT=spiralcraft-sandbox-$VERSION.zip
+REPO=http://publish.spiralcraft.com/snapshot
+REPOPATH=spiralcraft/distrib-sandbox/$VERSION
+
 mkdir ../download
-wget -O ../download/spiralcraft-sandbox-$VERSION.zip http://publish.spiralcraft.com/snapshot/spiralcraft/distrib-sandbox/$VERSION/spiralcraft-sandbox-$VERSION.zip 
-unzip -o ../download/spiralcraft-sandbox-$VERSION.zip -d ..
+if [[ $OSTYPE == darwin* ]]; then 
+  curl -o ../download/$ARTIFACT $REPO/$REPOPATH/$ARTIFACT
+else
+  wget -O ../download/$ARTIFACT $REPO/$REPOPATH/$ARTIFACT 
+fi
+unzip -o ../download/$ARTIFACT -d ..
