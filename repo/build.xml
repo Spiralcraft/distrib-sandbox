@@ -1,8 +1,8 @@
 <project name="repo" basedir="." default="update-repo">
 
   <property name="repo.dir" value="${basedir}"/>
-  <import file="../build/build-common.xml"/>
   <property name="ivy-resolver" value="spiralcraft-release"/>
+  <import file="../build/build-common.xml"/>
     
 
       
