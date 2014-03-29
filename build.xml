@@ -27,11 +27,6 @@
         <include name="bin/unzip.exe"/>
       </patternset>
     </unzip>
-    <unzip src="zip/wget-bin.zip" dest=".">
-      <patternset>
-        <include name="bin/wget.exe"/>
-      </patternset>
-    </unzip>
   </target>
     
   <zipfileset id="zip.exec.out" dir="." filemode="755">
@@ -52,8 +47,18 @@
      <get src="http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1-bin.zip"
        dest="zip/unzip-bin.zip"
      />
+     <!--
      <get src="http://downloads.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-bin.zip"
        dest="zip/wget-bin.zip"
+     />
+     -->
+     <!--
+     <get src="http://downloads.sourceforge.net/project/tumagcc/wget-1.15.7z"
+       dest="zip/wget-bin.zip"
+     />
+     -->
+     <get src="http://users.ugent.be/~bpuype/cgi-bin/fetch.pl?dl=wget/wget.exe"
+       dest="bin/wget.exe"
      />
    </target>
 </project>
