@@ -19,9 +19,19 @@
   
   <target name="zip" depends="pre-zip,build-app.zip"/>
     
-  <target name="pre-zip" depends="retrieve">
+  <target name="pre-zip" depends="retrieve,download">
     <delete dir="build"/>
     <unzip src="zip/spiralcraft-build.zip" dest="build"/>
+    <unzip src="zip/unzip-bin.zip" dest=".">
+      <patternset>
+        <include name="bin/unzip.exe"/>
+      </patternset>
+    </unzip>
+    <unzip src="zip/wget-bin.zip" dest=".">
+      <patternset>
+        <include name="bin/wget.exe"/>
+      </patternset>
+    </unzip>
   </target>
     
   <zipfileset id="zip.exec.out" dir="." filemode="755">
@@ -38,5 +48,12 @@
     <include name="repo/ivy.settings.xml"/>
   </zipfileset>
 
-  
+   <target name="download">
+     <get src="http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1-bin.zip"
+       dest="zip/unzip-bin.zip"
+     />
+     <get src="http://downloads.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-bin.zip"
+       dest="zip/wget-bin.zip"
+     />
+   </target>
 </project>
