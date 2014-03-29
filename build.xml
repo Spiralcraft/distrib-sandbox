@@ -1,15 +1,21 @@
 <project name="spiralcraft-distrib-sandbox" default="zip" basedir=".">
 
+  <property name="organization" value="spiralcraft"/>
   <property name="module" value="distrib-sandbox"/>
   <property name="buildVersion" value="0.4.17-dev1"/>
+  <property name="build.status" value="integration"/>
 
   <property name="zip.name" value="spiralcraft-sandbox-${buildVersion}.zip"/>
   <property name="publish.resolver.type" value="distrib"/>   
   <property name="ivy-publish-artifacts-dir" value="zip"/>
   <property name="ivy.retrieve-lib" value="false"/>
   <property name="ivy.retrieve-zip" value="true"/>
+
+  <property name="depends.dir" location="../../repo"/>
+  <property name="repo.dir" location="../../repo" />
+  <property file="../../build.local/build.properties"/>     
     
-  <import file="../../build/build-spiralcraft-common.xml"/>
+  <import file="../../build/build-common.xml"/>
   
   <target name="zip" depends="pre-zip,build-app.zip"/>
     
