@@ -2,8 +2,7 @@
 
   <property name="organization" value="spiralcraft"/>
   <property name="module" value="distrib-sandbox"/>
-  <property name="buildVersion" value="0.4.17-dev1"/>
-  <property name="build.status" value="integration"/>
+  <property file="version.properties"/>
 
   <property name="zip.name" value="spiralcraft-sandbox-${buildVersion}.zip"/>
   <property name="publish.resolver.type" value="distrib"/>   
@@ -27,6 +26,11 @@
         <include name="bin/unzip.exe"/>
       </patternset>
     </unzip>
+    <unzip src="zip/wget-bin.zip" dest="bin">
+      <patternset>
+        <include name="wget.exe"/>
+      </patternset>
+    </unzip>
   </target>
     
   <zipfileset id="zip.exec.out" dir="." filemode="755">
@@ -44,36 +48,47 @@
     <include name="repo/ivy.settings.xml"/>
   </zipfileset>
 
-   <target name="download">
-     <if>
-       <not>
-         <available file="zip/unzip-bin.zip"/>
-       </not>
-       <then>
-         <get src="http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1-bin.zip"
-           dest="zip/unzip-bin.zip"
-         />
-       </then>
-     </if>
-     <!--
-     <get src="http://downloads.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-bin.zip"
-       dest="zip/wget-bin.zip"
-     />
-     -->
-     <!--
-     <get src="http://downloads.sourceforge.net/project/tumagcc/wget-1.15.7z"
-       dest="zip/wget-bin.zip"
-     />
-     -->
-     <if>
-       <not>
-         <available file="bin/wget.exe"/>
-       </not>
-       <then>
-         <get src="http://users.ugent.be/~bpuype/cgi-bin/fetch.pl?dl=wget/wget.exe"
+  <target name="download">
+    <if>
+      <not>
+        <available file="zip/unzip-bin.zip"/>
+      </not>
+      <then>
+        <get src="http://downloads.sourceforge.net/project/gnuwin32/unzip/5.51-1/unzip-5.51-1-bin.zip"
+          dest="zip/unzip-bin.zip"
+        />
+      </then>
+    </if>
+    <!--
+    <get src="http://downloads.sourceforge.net/project/gnuwin32/wget/1.11.4-1/wget-1.11.4-1-bin.zip"
+      dest="zip/wget-bin.zip"
+    />
+    -->
+    <!--
+    <get src="http://downloads.sourceforge.net/project/tumagcc/wget-1.15.7z"
+      dest="zip/wget-bin.zip"
+    />
+    -->
+    <if>
+      <not>
+        <available file="zip/wget-bin.zip"/>
+      </not>
+      <then>
+      <!--
+        <get src="http://users.ugent.be/~bpuype/cgi-bin/fetch.pl?dl=wget/wget.exe"
            dest="bin/wget.exe"
          />
-       </then>
-     </if>
-   </target>
+      -->
+      <!--
+        <get src="http://downloads.sourceforge.net/project/tumagcc/wget-1.15.7z"
+          dest="zip/wget-bin.zip"
+        />
+      -->
+        <get src="https://eternallybored.org/misc/wget/releases/wget-1.17-win32.zip"
+          dest="zip/wget-bin.zip"
+        />
+      </then>
+      
+    </if>
+  </target>
 </project>
