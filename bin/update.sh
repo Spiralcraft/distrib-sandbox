@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 cd $(dirname $0)
-VERSION=0.4.17-dev1
+VERSION=0.4.17-dev8
 ARTIFACT=spiralcraft-sandbox-$VERSION.zip
 REPO=http://publish.spiralcraft.com/snapshot
 REPOPATH=spiralcraft/distrib-sandbox/$VERSION
