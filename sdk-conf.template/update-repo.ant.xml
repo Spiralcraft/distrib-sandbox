@@ -1,0 +1,19 @@
+<project default="update-repo">
+  <property name="project.root" location=".."/>
+
+  <property file="../sdk.local.properties"/>
+  
+  <!--  Default - change in sandbox.local.properties -->
+  <property name="sdk.dir" value="sdk"/>
+  
+  <property name="sdk.root" location="${project.root}/${sdk.dir}"/>
+  <property name="repo.dir" location="${sdk.root}/repo"/>
+  <property name="depends.dir" location="${sdk.root}/repo"/>
+  
+  <property file="${sdk.root}/build.local/sandbox.local.properties"/>
+	
+	
+  <property name="ivy-resolver" value="spiralcraft-release"/>
+  <echo>${sdk.root}</echo>
+  <import file="../build.xml"/>
+</project> 

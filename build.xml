@@ -44,6 +44,7 @@
   <zipfileset id="zip.out" dir=".">
     <include name="download"/>
     <include name="build/**"/>
+    <include name="sdk-conf.template/**"/>
     <include name="repo/build.xml"/>
     <include name="repo/ivy.settings.xml"/>
   </zipfileset>

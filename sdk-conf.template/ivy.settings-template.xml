@@ -1,0 +1,5 @@
+<ivysettings>
+  <settings defaultResolver="${ivy-resolver}"/>  
+  <include file="../build/ivy.common-settings.xml"/>
+
+</ivysettings>
